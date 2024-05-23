@@ -2,3 +2,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import './partials/index';
 @import './partials/show';
+@import './partials/home';
+
+
+li{
+    list-style-type:none;
+}
+a{
+    text-decoration: none;
+}
