@@ -15,7 +15,8 @@
                              <div>{{ $comic->date }}</div>
                              <div>{{ $comic->price }}</div>
                              <div>{{ $comic->type }}</div>
-                             <div>{{ $comic->description }}</div>
+                             <div class="mb-3">{{ $comic->description }}</div>
+                             <a href="{{ route('comics.show',["comic"=>$comic->id])}}" class="btn btn-primary">Specifiche Prodotto</a>
                             </div>
                           </div>
                     </div>

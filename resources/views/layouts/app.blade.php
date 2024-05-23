@@ -14,6 +14,7 @@
 
 </head>
 
+@include('partials.header')
 <body>
 
     <main >
