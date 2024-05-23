@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');// title ->string
             $table->text('description'); //description -> text
-            $table->text('image');//thumb -> string
+            $table->string('image');//thumb -> string
             $table->decimal('price',6,2);//price -> decimal
             $table->string('series');//series -> string
             $table->date('date');//sale_date -> date
