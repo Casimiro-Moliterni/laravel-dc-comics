@@ -4,14 +4,14 @@
 <section>
     <div class="container">
         <h1>{{ $comic->title}}</h1>
-        <div>
+        <div class="ms_image">
             <img src="https://picsum.photos/200/300">
         </div>
-        <div>{{ $comic->series }}</div>
-        <div>{{ $comic->date }}</div>
-        <div>{{ $comic->price }}</div>
-        <div>{{ $comic->type }}</div>
-        <div>{{ $comic->description }}</div>
+        <div>{{'Series:' . '  ' . $comic->series }}</div>
+        <div>{{'data:' . '  ' . $comic->date }}</div>
+        <div>{{'price:' . '  ' . $comic->price }}</div>
+        <div>{{ 'type:' . '  ' .$comic->type }}</div>
+        <div>{{ 'Description:' . '  ' .$comic->description }}</div>
     </div>
 </section>
 @endsection
