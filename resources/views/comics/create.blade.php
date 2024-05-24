@@ -28,10 +28,10 @@
                 <label for="price" class="form-label">Prezzo</label>
                 <input type="text" class="form-control" id="price" name='price'>
             </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Descrizione</label>
-                <input type="text" class="form-control" id="description" name='description'>
-            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 100px" name="description"></textarea>
+                <label for="description">Descrizione</label>
+              </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
