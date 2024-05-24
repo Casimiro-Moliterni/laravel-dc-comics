@@ -2,8 +2,9 @@
 .card{
    
     img{
-        height: 200px;
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center;
+        height: 300px;
         width: 100%;
     }
   
