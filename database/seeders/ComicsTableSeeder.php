@@ -22,7 +22,7 @@ class ComicsTableSeeder extends Seeder
             $newComic= new Comic();
             $newComic->title=$Singlecomic['title'];
             $newComic->description=$Singlecomic['description'];
-            $newComic->image=$Singlecomic['thumb'];
+            $newComic->image='https://picsum.photos/200/300';
             $newComic->price=$Singlecomic['price'];
             $newComic->series=$Singlecomic['series'];
             $newComic->date=$Singlecomic['sale_date'];

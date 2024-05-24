@@ -5,7 +5,7 @@
     <div class="container">
         <h1>{{ $comic->title}}</h1>
         <div class="ms_image">
-            <img src="https://picsum.photos/200/300">
+            <img src="{{ $comic->image }}">
         </div>
         <div>{{'Series:' . '  ' . $comic->series }}</div>
         <div>{{'data:' . '  ' . $comic->date }}</div>
