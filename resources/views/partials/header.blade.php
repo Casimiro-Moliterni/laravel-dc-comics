@@ -1,4 +1,4 @@
-<header class="p5 ">
+<header class="p5 position-sticky">
     <div class="ms_container">
         <nav class="navbar navbar-expand-lg ">
             {{-- <a class="navbar-brand a_my" href="{{ route('home') }}">Comics DC</a> --}}
