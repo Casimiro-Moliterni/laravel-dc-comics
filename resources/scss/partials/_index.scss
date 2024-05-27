@@ -7,5 +7,28 @@
         height: 300px;
         width: 100%;
     }
+    .my_accordion{
+            
+
+        .my_icon{
+            .ms_description{
+                display: none;
+    
+                
+            }
+            &:hover{
+                transform: rotate(180deg);
+                transition: 0.4s;
+            }
+            &:hover.ms_description{
+                display: flex;
+            }
+        }
+        .ms_description{
+            display: none;
+
+            
+        }
+    }
   
 }

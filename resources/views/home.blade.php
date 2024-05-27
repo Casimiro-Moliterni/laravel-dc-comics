@@ -2,7 +2,6 @@
 
 @section('content')
 <body class="my_body">
-    @include('partials.header')
     <main>
         <section>
             <div class="my_hero">
