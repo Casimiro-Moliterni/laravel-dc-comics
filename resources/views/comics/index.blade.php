@@ -18,13 +18,24 @@
                                     <div><strong>Date:</strong> <span>{{ $comic->date }}</span></div>
                                     <div><strong>Price:</strong> <span>{{ $comic->price }}&euro;</span></div>
                                     <div><strong>Type: </strong> <span>{{ $comic->type }}</span></div>
-                                    <div class="d-flex justify-content-center align-items-center gap-3 mt-1">
-                                        <a href="{{ route('comics.show', ['comic' => $comic->id]) }}"
-                                            class="btn btn-primary fs-5 fw-semibold">Specifiche Prodotto
-                                        </a>
-                                        <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}"
-                                            class="btn btn-warning text-white fs-5 fw-semibold">Modifica
-                                        </a>
+                                    <div class="d-flex flex-column gap-2 mt-1">
+                                        <div>
+                                            <a href="{{ route('comics.show', ['comic' => $comic->id]) }}"
+                                                class="btn btn-primary fs-5 fw-semibold">Specifiche Prodotto
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}"
+                                                class="btn btn-warning text-white fs-5 fw-semibold">Modifica
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger" type="submit">Elimina</button>
+                                            </form>
+                                        </div>
                                     </div>
 
                                 </div>
