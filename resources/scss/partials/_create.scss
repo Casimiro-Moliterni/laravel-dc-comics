@@ -13,17 +13,23 @@
         color: white;
        }
         label{
-            font-size: 25px;
-            font-weight: 500;
+            font-size: 30px;
+            font-weight: 700;
+           display: flex;
+           justify-content: center;
             color: aqua;
         }
+input,textarea{
+font-weight: 400;
+font-size: 25px;
+}
 
         .my_alert{
       width: 100%;
       display: flex;
       justify-content: center;
       background-color: rgba($color: red, $alpha: 0.8);
-      padding: 10px;
+      padding: 5px;
       border-radius: 10px;
       color: white;
       font-size: 16px;
@@ -31,19 +37,7 @@
       animation-name: bounce;
       animation-duration: .5s;
       animation-delay: 0.25s;
-      
-    //   animation: zoom-in-zoom-out 3s ease-out infinite;
-    //   @keyframes zoom-in-zoom-out {
-    //     0% {
-    //         transform: scale(1, 1);
-    //       }
-    //       50% {
-    //         transform: scale(1.1, 1.1);
-    //       }
-    //       100% {
-    //         transform: scale(1, 1);
-    //       }
-    //   }
+
     @keyframes bounce {
         0% {
           transform: translateX(0px);
@@ -83,9 +77,19 @@
             position: relative;
             width: 100%;
             border:2px color red;
+            color: white;
             background-color: rgba($color: rgb(220, 87, 87), $alpha: 0.1);
 
         }
 }
   
+}
+
+.bg_edit{
+  background-image: url('https://wallpapers.com/images/featured/dc-superheroes-s58k3rnawetsiiqh.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 111;
+
 }

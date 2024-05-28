@@ -71,9 +71,9 @@
                             @enderror
                         </div>
                         <label for="description" class="form-label">Descrizione</label>
-                        <div class="form-floating col-12">
-                            <textarea class="form-control @error('description') is-invalid @enderror"  placeholder="Leave a comment here" id="description" style="height: 100px"
-                                name="description" value={{ old('description') }}></textarea>
+                        <div class=" col-12">
+                            <textarea class="form-control @error('description') is-invalid @enderror"   id="description" style="height: 100px"
+                                name="description" >{{ old('description') }}</textarea>
                             @error('description')
                             <div class="d-flex  justify-content-center">
                                 <div class="my_alert">{{ $message }}</div>
@@ -81,7 +81,7 @@
                             @enderror
                         </div>
                     </div>
-                  <div class="d-flex justify-content-center"> <button type="submit" class="btn btn-primary mt-3">Submit</button></div>
+                  <div class="d-flex justify-content-center"> <button type="submit" class="btn btn-primary mt-3">Crea</button></div>
                 </form>
              </div>
             </div>

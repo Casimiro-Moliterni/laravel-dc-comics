@@ -34,3 +34,22 @@
     background-repeat: no-repeat;
     background-image: url('https://images2.alphacoders.com/131/1310578.jpg');
 }
+
+.my_message_show{
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    position: relative;
+    &::after{
+        content: '😎';
+    }
+    &::before{
+        content: '🦸‍♂️';
+    }
+}

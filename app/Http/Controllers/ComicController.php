@@ -109,8 +109,9 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
 
         $formData = $request->all();
-        $comic->update($formData);
         $this->validation($formData);
+        $comic->update($formData);
+        session()->flash('message', 'Il fumetto'. ' ' .$comic->title. ' ' .'è stato modificato con successo');
         return redirect()->route('comics.show',['comic'=>$comic->id]);
     }
 
@@ -140,7 +141,7 @@ class ComicController extends Controller
                 'series' => 'required|min:2|max:255',
                 'date' => 'required|date',
                 'price' => 'required',
-                'description' => 'required|min:2|max:300',
+                'description' => 'required|min:2|max:1000',
             ],[
                 'title.required' => 'Il Campo TITOLO è obbligatorio ',
                 'title.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri!",
@@ -159,9 +160,6 @@ class ComicController extends Controller
                 'description.required' => 'Il Campo DESCRIZIONE è obbligatorio ',
                 'description.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri",
                 'description.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
-                // 'date' => 'required|date',
-                // 'price' => 'required',
-                // 'description' => 'required|min:2|max:300',
             ]
         )->validate();
         return $validator;
