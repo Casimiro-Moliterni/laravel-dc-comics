@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 class ComicController extends Controller
 {
     /**
@@ -46,17 +46,17 @@ class ComicController extends Controller
     {
         //
         $formData =$request->all( );
-
+        $this->validation($formData);
         // nuova riga 
-        $validated = $request->validate([
-            'title' => 'required|min:4|max:255',
-            'image' => 'required|min:4|max:255',
-            'type' => 'required|min:2|max:255',
-            'series' => 'required|min:2|max:255',
-            'date' => 'required|date',
-            'price' => 'required',
-            'description' => 'required|min:2|max:300',
-        ]);
+        // $validated = $request->validate([
+        //     'title' => 'required|min:4|max:255',
+        //     'image' => 'required|min:4|max:255',
+        //     'type' => 'required|min:2|max:255',
+        //     'series' => 'required|min:2|max:255',
+        //     'date' => 'required|date',
+        //     'price' => 'required',
+        //     'description' => 'required|min:2|max:300',
+        // ]);
         $newComic= new Comic();
         $newComic->fill($formData);
         $newComic->save();
@@ -109,9 +109,8 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
 
         $formData = $request->all();
-
         $comic->update($formData);
-        
+        $this->validation($formData);
         return redirect()->route('comics.show',['comic'=>$comic->id]);
     }
 
@@ -129,5 +128,42 @@ class ComicController extends Controller
         $comic->delete();
         
         return redirect()->route('comics.index');
+    }
+
+    private function validation($data){
+        $validator= Validator::make(
+            $data,
+            [
+                'title' => 'required|min:4|max:255',
+                'image' => 'required|min:4|max:255',
+                'type' => 'required|min:2|max:255',
+                'series' => 'required|min:2|max:255',
+                'date' => 'required|date',
+                'price' => 'required',
+                'description' => 'required|min:2|max:300',
+            ],[
+                'title.required' => 'Il Campo TITOLO è obbligatorio ',
+                'title.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri!",
+                'title.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
+                'image.required' => 'Il Campo IMAGE è obbligatorio ',
+                'image.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri",
+                'image.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
+                'type.required' => 'Il Campo TIPO è obbligatorio ',
+                'type.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri",
+                'type.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
+                'series.required' => 'Il Campo SERIES è obbligatorio ',
+                'series.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri",
+                'series.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
+                'date.required' => 'Il Campo DATA è obbligatorio ',
+                'price.required' => 'Il Campo PREZZO è obbligatorio ',
+                'description.required' => 'Il Campo DESCRIZIONE è obbligatorio ',
+                'description.min' => "Per poter PROSEGUIRE è necessario inserire PIU' caratteri",
+                'description.max' => 'Per poter PROSEGUIRE è necessario inserire MENO caratteri! ',
+                // 'date' => 'required|date',
+                // 'price' => 'required',
+                // 'description' => 'required|min:2|max:300',
+            ]
+        )->validate();
+        return $validator;
     }
 }
