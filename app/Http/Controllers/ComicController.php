@@ -53,9 +53,9 @@ class ComicController extends Controller
             'image' => 'required|min:4|max:255',
             'type' => 'required|min:2|max:255',
             'series' => 'required|min:2|max:255',
-            'date' => 'required',
+            'date' => 'required|date',
             'price' => 'required',
-            'description' => 'required|min:5|max:300',
+            'description' => 'required|min:2|max:300',
         ]);
         $newComic= new Comic();
         $newComic->fill($formData);

@@ -1,6 +1,91 @@
-.ms_createbody{
+.ms_create_body{
     background-image: url('https://images7.alphacoders.com/114/1144579.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: aqua;
+    position: relative;
+    z-index: 111;
+.my_wrapper_form{
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    h2{
+        font-size: 50px;
+        color: white;
+       }
+        label{
+            font-size: 25px;
+            font-weight: 500;
+            color: aqua;
+        }
+
+        .my_alert{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: rgba($color: red, $alpha: 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      animation-name: bounce;
+      animation-duration: .5s;
+      animation-delay: 0.25s;
+      
+    //   animation: zoom-in-zoom-out 3s ease-out infinite;
+    //   @keyframes zoom-in-zoom-out {
+    //     0% {
+    //         transform: scale(1, 1);
+    //       }
+    //       50% {
+    //         transform: scale(1.1, 1.1);
+    //       }
+    //       100% {
+    //         transform: scale(1, 1);
+    //       }
+    //   }
+    @keyframes bounce {
+        0% {
+          transform: translateX(0px);
+          timing-function: ease-in;
+        }
+        37% {
+          transform: translateX(5px);
+          timing-function: ease-out;
+        }
+        55% {
+          transform: translateX(-5px);
+          timing-function: ease-in;
+        }
+        73% {
+          transform: translateX(4px);
+          timing-function: ease-out;
+        }
+        82% {
+          transform: translateX(-4px);
+          timing-function: ease-in;
+        }
+        91% {
+          transform: translateX(2px);
+          timing-function: ease-out;
+        }
+        96% {
+          transform: translateX(-2px);
+          timing-function: ease-in;
+        }
+        100% {
+          transform: translateX(0px);
+          timing-function: ease-in;
+        }
+    }
+    }
+        .is-invalid{
+            position: relative;
+            width: 100%;
+            border:2px color red;
+            background-color: rgba($color: rgb(220, 87, 87), $alpha: 0.1);
+
+        }
+}
+  
 }
