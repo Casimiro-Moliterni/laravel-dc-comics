@@ -7,7 +7,7 @@
     background-position: center;
     position: relative;
     z-index: 15;
-    transition-duration: 5s;
+  transition-duration: 3s;
     .ms_overlay{
       position: absolute;
       height: 100%;
@@ -19,7 +19,6 @@
       opacity: 0;
       background-size: cover;
       transition-duration: 0.9s;
-
     }
     &:hover h2{
         scale: 2;
@@ -44,8 +43,8 @@
     .card{
         background-color: rgb(32, 27, 27);
        border: 1px solid #0077F2;
-       min-height: fit-content;
-       transition: 1s;
+       min-height: 650px;
+       transition: 0.5s;
        opacity: 0;
        z-index: 11;
         img{
@@ -87,12 +86,12 @@
         position:relative;
         z-index: 11;
         margin-bottom: 50px;
-        transition-duration:0.7s ;
+        transition-duration:0.5s;
     }
 
     &:hover .card{
         opacity: 1;
-        transition-duration: 3s;
+        transition-duration: 0.6s;
     }
 }
 

@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="data" class="form-label">data</label>
-            <input type="text" class="form-control" id="data" name='date' value="{{ $comic->date}}">
+            <input type="date" class="form-control" id="data" name='date' value="{{ $comic->date}}">
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>

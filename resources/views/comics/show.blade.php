@@ -27,23 +27,23 @@
                             <strong>type:</strong>
                             <span class="fs-5">{{ $comic->type }}</span>
                         </div>
-                        <div>
-                            <strong>Description:</strong>
-                            <span class="fs-5">{{ $comic->description }}</span>
-                        </div>
                     </div>
                 </div>
-                <div class="d-flex gap-1 mt-1">
+                <div class="d-flex gap-1 mt-1 flex-column">
                     <div>
                         <a href="{{ route('comics.create', ['comic' => $comic->id]) }}"
                             class="btn btn-success text-white fs-5 fw-semibold">Crea Il Tuo Fumetto Personalizzato
                         </a>
-                    </div>
-                   <div>
                     <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}"
                         class="btn btn-warning text-white fs-5 fw-semibold">Modifica Fumetto
                     </a>
                    </div>
+                   <div class="h-100 border border-success border-2 p-2">
+                    <div class="text-white bg-success p-1">
+                        <strong>Description:</strong>
+                        <span class="fs-5">{{ $comic->description }}</span>
+                    </div>
+                 </div>
                 </div>
             </div>
         </section>
