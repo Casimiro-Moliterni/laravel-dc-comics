@@ -7,30 +7,15 @@
     background-position: center;
     position: relative;
     z-index: 15;
-  transition-duration: 3s;
-    .ms_overlay{
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-image: url('https://www.pixel4k.com/wp-content/uploads/2022/02/dc-fandome-4k_1645750416.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: 16;
-      opacity: 0;
-      background-size: cover;
-      transition-duration: 0.9s;
-    }
+    transition-duration: 3s;
+   
     &:hover h2{
         scale: 2;
         padding:30px;
         transition-duration: 0.7s;
     }
 
-    &:hover .ms_overlay{
-      opacity: 0;
-      z-index: 1;
-      transition-duration: 1s;
-    }
+
     h2{
         font-size: 45px;
         font-weight: 900;

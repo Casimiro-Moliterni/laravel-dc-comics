@@ -48,15 +48,16 @@ class ComicController extends Controller
         $formData =$request->all( );
 
         // nuova riga 
-
+        $validated = $request->validate([
+            'title' => 'required|min:4|max:255',
+            'image' => 'required|min:4|max:255',
+            'type' => 'required|min:2|max:255',
+            'series' => 'required|min:2|max:255',
+            'date' => 'required',
+            'price' => 'required',
+            'description' => 'required|min:5|max:300',
+        ]);
         $newComic= new Comic();
-        // $newComic->title=$formData['title'];
-        // $newComic->type=$formData['type'];
-        // $newComic->image=$formData['image'];
-        // $newComic->series=$formData['series'];
-        // $newComic->date=$formData['date'];
-        // $newComic->price=$formData['price'];
-        // $newComic->description=$formData['description'];
         $newComic->fill($formData);
         $newComic->save();
         return redirect()->route('comics.show',['comic'=>$newComic->id]);
