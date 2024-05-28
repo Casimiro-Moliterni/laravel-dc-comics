@@ -60,6 +60,7 @@ class ComicController extends Controller
         $newComic= new Comic();
         $newComic->fill($formData);
         $newComic->save();
+        session()->flash('message', 'Il fumetto'. ' ' .$newComic->title. ' ' .'è stato creato con successo');
         return redirect()->route('comics.show',['comic'=>$newComic->id]);
     }
 

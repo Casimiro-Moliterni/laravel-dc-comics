@@ -44,3 +44,44 @@
 
 }
 
+.ms_iframe{
+    position: relative;
+
+    .my_overlay_iframe{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        left: 0;
+        transition: all 6s ease-in-out;
+        transform: translatex(100vw);
+        background-color: black;
+        z-index: 23;
+        opacity: 1;
+        background-image:url('https://www.labottegadihamlin.it/wp-content/uploads/2013/06/cavaliere-oscuro.jpg') ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &::after{
+            content: 'GUARDA IL TRAILER';
+            font-size: 60px;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+   
+
+    }
+
+    &:hover .my_overlay_iframe{
+        opacity: 0;
+        z-index: 0;
+        transition-duration: 1s;
+    }
+    &:hover{
+        z-index: 111111111111;
+    }
+}

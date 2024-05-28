@@ -6,13 +6,6 @@
         <section class="ms_index">
             <div class="ms_overlay"></div>
             <div class="container">
-                <div>
-                    @if (session()->has('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                    @endif
-                </div>
                 <h2 class="text-center">Lista Fumetti</h2>
                 <div class="row row-cols-3 gy-2">
                     @foreach ($comics as $comic)
